@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const NotificationContainer = styled.div`
     width: 95%;
@@ -33,6 +34,12 @@ const Notification = ({ message, background, deleteMessage }) => {
             <Button onClick={() => deleteMessage(message.id)}>Clear</Button>
         </NotificationContainer>
     );
+}
+
+Notification.propTypes = {
+    message: PropTypes.object.isRequired,
+    background: PropTypes.string.isRequired,
+    deleteMessage: PropTypes.func.isRequired
 }
 
 export default Notification;

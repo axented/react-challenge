@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Notification from './Notification';
+import PropTypes from 'prop-types';
 
 const GridContainer = styled.div`
     display: flex;
@@ -54,6 +55,11 @@ const Grid = ({ messages, deleteMessage }) => {
 
         </GridContainer>
     );
+}
+
+Grid.propTypes = {
+    messages: PropTypes.array.isRequired,
+    deleteMessage: PropTypes.func.isRequired
 }
 
 export default Grid;
