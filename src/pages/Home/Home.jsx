@@ -1,10 +1,13 @@
 import React from 'react';
 import MessageList from '../../components/MessageList/MessageList';
+import MessagesContextProvider from '../../context/MessagesContext';
 
 const Home = () => {
   return (
     <div>
-      <MessageList />
+      <MessagesContextProvider>
+        <MessageList />
+      </MessagesContextProvider>
     </div>
   );
 };
