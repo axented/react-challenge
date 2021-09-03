@@ -1,13 +1,11 @@
-import React, { createContext, useReducer } from 'react';
-import { messagesReducer } from '../reducers/messagesReducer';
+import React, { createContext, useState } from 'react';
 
 export const MessagesContext = createContext();
 
 const MessagesContextProvider = ({ children }) => {
-  const [messages, dispatch] = useReducer(messagesReducer, {});
-
+  const [messages, setMessages] = useState([]);
   return (
-    <MessagesContext.Provider value={{ messages, dispatch }}>
+    <MessagesContext.Provider value={{ messages, setMessages }}>
       {children}
     </MessagesContext.Provider>
   );
