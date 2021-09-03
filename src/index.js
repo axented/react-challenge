@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from './pages/Home/Home';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import MessageList from './components/message-list'
 
-const NewApp = require('./pages/Home/Home.jsx').default;
+const NewApp = require('./components/message-list').default
 
 function renderApp(App) {
-  ReactDOM.render(<App />, document.getElementById('root'));
+  ReactDOM.render(<App />, document.getElementById('root'))
 }
 
-renderApp(Home);
+renderApp(MessageList)
 
-// if (module.hot) {
-//   module.hot.accept('./pages/Home.jsx', () => {
-//     renderApp(NewApp);
-//   });
-// }
+if (module.hot) {
+  module.hot.accept('./components/message-list', () => {
+    renderApp(NewApp)
+  })
+}
