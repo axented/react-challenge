@@ -16,8 +16,8 @@ function renderApp(App) {
 
 renderApp(Home);
 
-// if (module.hot) {
-//   module.hot.accept('./pages/Home/Home.jsx', () => {
-//     renderApp(NewApp);
-//   });
-// }
+if (module.hot) {
+  module.hot.accept('./pages/Home/Home.jsx', () => {
+    renderApp(NewApp);
+  });
+}
