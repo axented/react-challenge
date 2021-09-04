@@ -11,3 +11,7 @@
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
+
+.Cards-card > p:last-child {
+  cursor: pointer;
+}
