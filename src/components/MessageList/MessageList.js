@@ -53,6 +53,13 @@ class MessageList extends React.PureComponent {
     this.forceUpdate();
   };
 
+  handleClear = () => {
+    this.setState({ messages: [] });
+    this.context.setPriorityOne([]);
+    this.context.setPriorityTwo([]);
+    this.context.setPriorityThree([]);
+  };
+
   render() {
     const isApiStarted = this.api.isStarted();
 
@@ -60,6 +67,9 @@ class MessageList extends React.PureComponent {
       <div>
         <Button variant="contained" onClick={this.handleClick}>
           {isApiStarted ? 'Stop Messages' : 'Start Messages'}
+        </Button>
+        <Button variant="contained" onClick={this.handleClear}>
+          Clear
         </Button>
       </div>
     );

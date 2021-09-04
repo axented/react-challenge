@@ -6,30 +6,21 @@ import { MessagesContext } from '../../context/MessagesContext';
 import './Home.css';
 
 const Home = () => {
-  const {
-    priorityOne,
-    priorityTwo,
-    priorityThree,
-    setPriorityOne,
-    setPriorityTwo,
-    setPriorityThree,
-  } = useContext(MessagesContext);
+  const { priorityOne, priorityTwo, priorityThree } = useContext(MessagesContext);
 
   console.log({ priorityOne, priorityTwo, priorityThree });
-
-  const handleClick = () => {
-    setPriorityOne([]);
-    setPriorityTwo([]);
-    setPriorityThree([]);
-  };
 
   return (
     <div>
       <MessageList />
-      <button onClick={handleClick}>Clear</button>
       <div className="cards">
+        <p>{priorityOne.length}</p>
         <TestComponent data={priorityOne} background={'#F56236'} />
+
+        <p>{priorityTwo.length}</p>
         <TestComponent data={priorityTwo} background={'#FCE788'} />
+
+        <p>{priorityThree.length}</p>
         <TestComponent data={priorityThree} background={'#88FCA3'} />
       </div>
     </div>
