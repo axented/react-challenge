@@ -3,9 +3,13 @@ import { useContext } from 'react';
 import { MessagesContext } from '../../context/MessagesContext';
 
 const TestComponent = () => {
-  const { messages } = useContext(MessagesContext);
+  const { priorityOne, priorityTwo, priorityThree } = useContext(MessagesContext);
 
-  console.log('test', messages);
+  console.log({ priorityOne, priorityTwo, priorityThree });
+
+  // if (messages[0]?.priority === 1) {
+  //   console.log(messages[0], 1);
+  // }
 
   return (
     <div>

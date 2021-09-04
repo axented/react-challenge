@@ -32,7 +32,13 @@ class MessageList extends React.PureComponent {
       () => {
         // Included to support initial direction. Please remove upon completion
         console.log(messages);
-        this.context.setMessages((messages) => [...messages, message]);
+        if (message.priority === 1) {
+          this.context.setPriorityOne((messages) => [message, ...messages]);
+        } else if (message.priority === 2) {
+          this.context.setPriorityTwo((messages) => [message, ...messages]);
+        } else if (message.priority === 3) {
+          this.context.setPriorityThree((messages) => [message, ...messages]);
+        }
       },
     );
   }

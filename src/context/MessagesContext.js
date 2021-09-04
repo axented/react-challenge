@@ -3,9 +3,20 @@ import React, { createContext, useState } from 'react';
 export const MessagesContext = createContext();
 
 const MessagesContextProvider = ({ children }) => {
-  const [messages, setMessages] = useState([]);
+  const [priorityOne, setPriorityOne] = useState([]);
+  const [priorityTwo, setPriorityTwo] = useState([]);
+  const [priorityThree, setPriorityThree] = useState([]);
   return (
-    <MessagesContext.Provider value={{ messages, setMessages }}>
+    <MessagesContext.Provider
+      value={{
+        priorityOne,
+        setPriorityOne,
+        priorityTwo,
+        setPriorityTwo,
+        priorityThree,
+        setPriorityThree,
+      }}
+    >
       {children}
     </MessagesContext.Provider>
   );
