@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import MessageList from '../../components/MessageList/MessageList';
-import TestComponent from '../../components/TestComponent/TestComponent';
+import Notification from '../../components/Notification/Notification';
+import Card from '../../components/Card/Card';
 import { MessagesContext } from '../../context/MessagesContext';
 
 import './Home.css';
@@ -24,11 +25,13 @@ const Home = () => {
   return (
     <div className="Home">
       <div className="Home-container">
+        <Notification data={priorityOne} />
         <MessageList />
         <div className="Home-cards">
           <div className="Home-cards-card">
-            <p>{priorityOne.length}</p>
-            <TestComponent
+            <h3>Error Type 1</h3>
+            <p>Count {priorityOne.length}</p>
+            <Card
               data={priorityOne}
               background={'#F56236'}
               handleNotificationClear={(id) =>
@@ -37,8 +40,10 @@ const Home = () => {
             />
           </div>
           <div className="Home-cards-card">
-            <p>{priorityTwo.length}</p>
-            <TestComponent
+            <h3>Warning Type 2</h3>
+
+            <p>Count {priorityTwo.length}</p>
+            <Card
               data={priorityTwo}
               background={'#FCE788'}
               handleNotificationClear={(id) =>
@@ -47,8 +52,10 @@ const Home = () => {
             />
           </div>
           <div className="Home-cards-card">
-            <p>{priorityThree.length}</p>
-            <TestComponent
+            <h3>Info Type 3</h3>
+
+            <p>Count {priorityThree.length}</p>
+            <Card
               data={priorityThree}
               background={'#88FCA3'}
               handleNotificationClear={(id) =>
