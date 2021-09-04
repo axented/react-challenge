@@ -1,3 +1,10 @@
+.Cards > p,
+.Cards h3 {
+  margin: 0;
+}
+.Cards > p {
+  margin-bottom: 10px;
+}
 .Cards-card {
   display: flex;
   margin-bottom: 8px;

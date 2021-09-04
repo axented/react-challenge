@@ -17,8 +17,6 @@ const Home = () => {
     setPriorityThree,
   } = useContext(MessagesContext);
 
-  console.log({ priorityOne, priorityTwo, priorityThree });
-
   const handleNotificationClear = (setState, id) => {
     setState((el) => el.filter((notification) => notification.id !== id));
   };
@@ -31,10 +29,9 @@ const Home = () => {
         <MessageList />
         <div className="Home-cards">
           <div className="Home-cards-card">
-            <h3>Error Type 1</h3>
-            <p>Count {priorityOne.length}</p>
             <Card
               data={priorityOne}
+              title={'Error Type 1'}
               background={'#F56236'}
               handleNotificationClear={(id) =>
                 handleNotificationClear(setPriorityOne, id)
@@ -42,11 +39,9 @@ const Home = () => {
             />
           </div>
           <div className="Home-cards-card">
-            <h3>Warning Type 2</h3>
-
-            <p>Count {priorityTwo.length}</p>
             <Card
               data={priorityTwo}
+              title={'Warning Type 2'}
               background={'#FCE788'}
               handleNotificationClear={(id) =>
                 handleNotificationClear(setPriorityTwo, id)
@@ -54,11 +49,9 @@ const Home = () => {
             />
           </div>
           <div className="Home-cards-card">
-            <h3>Info Type 3</h3>
-
-            <p>Count {priorityThree.length}</p>
             <Card
               data={priorityThree}
+              title={'Info Type 3'}
               background={'#88FCA3'}
               handleNotificationClear={(id) =>
                 handleNotificationClear(setPriorityThree, id)
