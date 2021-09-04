@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button';
 import Api from '../../api';
 import { MessagesContext } from '../../context/MessagesContext';
 
+import './MessageList.css';
+
 class MessageList extends React.PureComponent {
   static contextType = MessagesContext;
 
@@ -64,9 +66,9 @@ class MessageList extends React.PureComponent {
     const isApiStarted = this.api.isStarted();
 
     return (
-      <div>
+      <div className="MesageList">
         <Button variant="contained" onClick={this.handleClick}>
-          {isApiStarted ? 'Stop Messages' : 'Start Messages'}
+          {isApiStarted ? 'Stop' : 'Start'}
         </Button>
         <Button variant="contained" onClick={this.handleClear}>
           Clear

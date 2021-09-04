@@ -2,6 +2,15 @@
   width: 100vw;
 }
 
+.Home-cards-card > p,
+.Home-cards-card h3 {
+  margin: 0;
+}
+
+.Home-cards-card > p {
+  margin-bottom: 10px;
+}
+
 .Home-container {
   display: flex;
   flex-direction: column;
