@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Notification.css';
 
 const Notification = ({ data }) => {
   const [queue, setQueue] = useState([]);
@@ -24,9 +25,9 @@ const Notification = ({ data }) => {
 
   if (queue.length) {
     return (
-      <div>
-        <p>{queue[0]}</p>
+      <div className="Notification">
         <p onClick={handleClick}>&#10005;</p>
+        <p>{queue[0]}</p>
       </div>
     );
   } else {
