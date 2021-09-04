@@ -5,6 +5,7 @@ import Card from '../../components/Card/Card';
 import { MessagesContext } from '../../context/MessagesContext';
 
 import './Home.css';
+import Navbar from '../../components/Navbar/Navbar';
 
 const Home = () => {
   const {
@@ -25,6 +26,7 @@ const Home = () => {
   return (
     <div className="Home">
       <div className="Home-container">
+        <Navbar />
         <Notification data={priorityOne} />
         <MessageList />
         <div className="Home-cards">

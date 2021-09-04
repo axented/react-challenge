@@ -1,0 +1,10 @@
+nav {
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 0 8px;
+}
+
+nav > h4 {
+  margin: 18px 0;
+}
