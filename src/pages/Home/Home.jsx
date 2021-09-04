@@ -22,29 +22,41 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <MessageList />
-      <div className="cards">
-        <p>{priorityOne.length}</p>
-        <TestComponent
-          data={priorityOne}
-          background={'#F56236'}
-          handleNotificationClear={(id) => handleNotificationClear(setPriorityOne, id)}
-        />
-
-        <p>{priorityTwo.length}</p>
-        <TestComponent
-          data={priorityTwo}
-          background={'#FCE788'}
-          handleNotificationClear={(id) => handleNotificationClear(setPriorityTwo, id)}
-        />
-
-        <p>{priorityThree.length}</p>
-        <TestComponent
-          data={priorityThree}
-          background={'#88FCA3'}
-          handleNotificationClear={(id) => handleNotificationClear(setPriorityThree, id)}
-        />
+    <div className="Home">
+      <div className="Home-container">
+        <MessageList />
+        <div className="Home-cards">
+          <div className="Home-cards-card">
+            <p>{priorityOne.length}</p>
+            <TestComponent
+              data={priorityOne}
+              background={'#F56236'}
+              handleNotificationClear={(id) =>
+                handleNotificationClear(setPriorityOne, id)
+              }
+            />
+          </div>
+          <div className="Home-cards-card">
+            <p>{priorityTwo.length}</p>
+            <TestComponent
+              data={priorityTwo}
+              background={'#FCE788'}
+              handleNotificationClear={(id) =>
+                handleNotificationClear(setPriorityTwo, id)
+              }
+            />
+          </div>
+          <div className="Home-cards-card">
+            <p>{priorityThree.length}</p>
+            <TestComponent
+              data={priorityThree}
+              background={'#88FCA3'}
+              handleNotificationClear={(id) =>
+                handleNotificationClear(setPriorityThree, id)
+              }
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
