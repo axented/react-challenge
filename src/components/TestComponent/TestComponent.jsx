@@ -1,11 +1,14 @@
 import React from 'react';
 
-const TestComponent = ({ data, background }) => {
+const TestComponent = ({ data, background, handleNotificationClear }) => {
+  let filteredArray = data;
+
   return (
     <div>
-      {data.map((el) => (
+      {filteredArray?.map((el) => (
         <div key={el.id} style={{ background: background }}>
           <p>{el.message}</p>
+          <p onClick={() => handleNotificationClear(el.id)}>Clear</p>
         </div>
       ))}
     </div>

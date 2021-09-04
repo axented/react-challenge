@@ -6,22 +6,45 @@ import { MessagesContext } from '../../context/MessagesContext';
 import './Home.css';
 
 const Home = () => {
-  const { priorityOne, priorityTwo, priorityThree } = useContext(MessagesContext);
+  const {
+    priorityOne,
+    priorityTwo,
+    priorityThree,
+    setPriorityOne,
+    setPriorityTwo,
+    setPriorityThree,
+  } = useContext(MessagesContext);
 
   console.log({ priorityOne, priorityTwo, priorityThree });
+
+  const handleNotificationClear = (setState, id) => {
+    setState((el) => el.filter((notification) => notification.id !== id));
+  };
 
   return (
     <div>
       <MessageList />
       <div className="cards">
         <p>{priorityOne.length}</p>
-        <TestComponent data={priorityOne} background={'#F56236'} />
+        <TestComponent
+          data={priorityOne}
+          background={'#F56236'}
+          handleNotificationClear={(id) => handleNotificationClear(setPriorityOne, id)}
+        />
 
         <p>{priorityTwo.length}</p>
-        <TestComponent data={priorityTwo} background={'#FCE788'} />
+        <TestComponent
+          data={priorityTwo}
+          background={'#FCE788'}
+          handleNotificationClear={(id) => handleNotificationClear(setPriorityTwo, id)}
+        />
 
         <p>{priorityThree.length}</p>
-        <TestComponent data={priorityThree} background={'#88FCA3'} />
+        <TestComponent
+          data={priorityThree}
+          background={'#88FCA3'}
+          handleNotificationClear={(id) => handleNotificationClear(setPriorityThree, id)}
+        />
       </div>
     </div>
   );
